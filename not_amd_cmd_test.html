@@ -1,0 +1,22 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>stringify 非 AMD CMD Test</title>
+	<script src="http://js.letvcdn.com/lc06_lecloud/201611/28/17/05/jquery-1.11.3.js"></script>
+	<script src="./stringify.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var data 		= {
+			name 	: 'Soei',
+			weight 	: '61kg',
+			info 	: [ '100', 200 ]
+		}
+		$( '<div> stringify.stringify'+ stringify.stringify( data, "'" )+'</div>' ).appendTo( 'body' )
+
+		data = stringify.pick( data, ['name'] );
+		
+		$( '<div> stringify.pick'+ stringify.stringify( data )+'</div>' ).appendTo( 'body' )
+	</script>
+</body>
+</html>

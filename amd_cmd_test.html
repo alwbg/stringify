@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>stringify AMD CMD Test</title>
+	<script type="text/javascript">
+		var _Qma = {
+			alias :{
+				stringify 	: './stringify',
+				query 	: 'http://js.letvcdn.com/lc06_lecloud/201611/28/17/05/jquery-1.11.3.js'
+			},
+			depends : {
+				query : {
+					exports : '$'
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<script src="../runjs/runjs.js">
+		var stringify 	= require( 'stringify' );
+		var Q 			= require( 'query' );
+		var data 		= {
+			name 	: 'Soei',
+			weight 	: '61kg',
+			info 	: [ '100', 200 ]
+		}
+		Q( '<div> stringify.stringify'+ stringify.stringify( data, "'" )+'</div>' ).appendTo( 'body' )
+
+		data = stringify.pick( data, ['name'] );
+		
+		Q( '<div> stringify.pick'+ stringify.stringify( data )+'</div>' ).appendTo( 'body' )
+		
+	</script>
+</body>
+</html>
